@@ -22,7 +22,7 @@ public class Book {
     public Long price;
 
     @Column(unique = true,nullable = false)
-    public Long isbn;
+    public String isbn;
     public Book() {}
 
     public void setPrice(Long price) {
@@ -30,5 +30,13 @@ public class Book {
             throw new IllegalArgumentException("Price must be positive");
         }
         this.price = price;
+    }
+
+    public Long getId(){
+        return id;
+    }
+
+    public String getIsbn() {
+        return isbn;
     }
 }
