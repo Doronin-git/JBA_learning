@@ -35,6 +35,16 @@ public class Book {
     public Long getId(){
         return id;
     }
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+    
+    public Long getPrice(){return price;}
+
 
     public String getIsbn() {
         return isbn;
