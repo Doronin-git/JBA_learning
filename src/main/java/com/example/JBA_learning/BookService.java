@@ -13,7 +13,7 @@ public class BookService {
         this.bookRepository = bookRepository;
     }
 
-    public Book CreateBook(Book book){
+    public Book createBook(Book book){
         if (bookRepository.existsByIsbn(book.getIsbn())) {
             throw new IllegalStateException("Book exists");
         }
