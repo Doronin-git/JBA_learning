@@ -56,8 +56,3 @@ spring.datasource.password=your_password
 mvn spring-boot:run
 
 ```
-
-
-
-```
-```
