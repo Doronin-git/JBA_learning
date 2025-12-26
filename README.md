@@ -1,42 +1,63 @@
-JBA Learning - Book API
-This is a simple educational project to learn Java Spring Boot and PostgreSQL database integration.
+# Book Management System
 
-Features
-REST API for managing a book collection.
+A simple REST API built with **Spring Boot** and **PostgreSQL** for educational purposes. This project demonstrates basic CRUD operations, database connectivity, and JPA repositories.
 
-Automated database schema generation using Hibernate.
+##  Technologies
+* **Java 17**
+* **Spring Boot 4**
+* **Spring Data JPA**
+* **PostgreSQL**
+* **Maven**
 
-Validation for unique ISBN numbers.
+##  Project Structure
+- `BookController`: Handles HTTP requests (GET, POST).
+- `BookService`: Contains business logic (e.g., checking if ISBN exists).
+- `BookRepository`: Interface for database communication.
+- `Book`: The main data model (Entity).
 
-Basic CRUD operations (Create, Read).
+##  API Endpoints
 
-Tech Stack
-Java 17
+### Add a new book
+`POST /book`
 
-Spring Boot
-
-Spring Data JPA
-
-PostgreSQL
-
-API Endpoints
-POST /book Used to add a new book to the database. Example JSON Body:
-
-JSON
-
+**Request Body:**
+```json
 {
   "title": "Clean Code",
   "author": "Robert C. Martin",
   "price": 2500,
   "isbn": "9780132350884"
 }
-GET /book Returns a list of all books in the database.
 
-GET /book/{id} Returns details of a specific book by its ID.
+```
 
-How to run
-Create a PostgreSQL database named jba_learning.
+### Get all books
 
-Update src/main/resources/application.properties with your database username and password.
+`GET /book`
 
-Run the application using your IDE or mvn spring-boot:run.
+### Get book by ID
+
+`GET /book/{id}`
+
+## Setup
+
+1. Create a database in PostgreSQL named `jba_learning`.
+2. Open `src/main/resources/application.properties` and update your credentials:
+```properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/jba_learning
+spring.datasource.username=your_username
+spring.datasource.password=your_password
+
+```
+
+
+3. Run the application via your IDE or use:
+```bash
+mvn spring-boot:run
+
+```
+
+
+
+```
+```
