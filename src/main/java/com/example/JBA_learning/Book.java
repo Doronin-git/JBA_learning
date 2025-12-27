@@ -16,7 +16,8 @@ public class Book {
     @Column(nullable = false)
     private String title;
 
-    public String author;
+    @ManyToOne
+    public Author author;
 
 
     public Long price;
